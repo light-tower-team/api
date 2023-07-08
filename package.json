@@ -1,8 +1,18 @@
 {
-  "name": "new_nest_platform",
+  "name": "@light-tower-team/api",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.1-alpha1",
   "type": "module",
+  "license": "ISC",
+  "author": "michailshcherbakov@gmail.com",
+  "bugs": {
+    "url": "https://github.com/light-tower-team/api/issues"
+  },
+  "homepage": "https://github.com/light-tower-team/api#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/light-tower-team/api.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -14,6 +24,7 @@
     "migrate": "prisma migrate dev --name"
   },
   "dependencies": {
+    "@light-tower-team/core": "^0.0.1-alpha7",
     "@nestjs/common": "^9.4.2",
     "@nestjs/core": "^9.4.2",
     "@nestjs/platform-express": "^9.4.2"
