@@ -2,6 +2,8 @@ import { fastify } from "fastify";
 import jwt from "jsonwebtoken";
 import mercurius from "mercurius";
 
+import { env } from "@app/env";
+
 const app = fastify({
   logger: true,
   bodyLimit: 1_000_000,
@@ -25,7 +27,7 @@ const app = fastify({
 //   },
 // });
 
-app.listen({ port: 8080, host: "0.0.0.0" }).catch((error) => {
+app.listen({ port: env.PORT, host: env.HOST }).catch((error) => {
   app.log.error(error);
   process.exit(1);
 });

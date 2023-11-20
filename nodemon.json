@@ -1,7 +1,7 @@
 {
   "watch": ["src"],
   "ignore": ["src/**/*.spec.ts", "node_modules", "dist"],
-  "ext": "ts,json",
-  "exec": "etsc && node --inspect ./dist/main.js",
+  "ext": "ts,mjs,js,cjs,json,graphql",
+  "exec": "node scripts/build.mjs && node --env-file=.env --inspect ./dist/main.js",
   "legacyWatch": true
 }

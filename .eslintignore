@@ -1,3 +1,6 @@
 /node_modules/
 /migrations/
-schema.typegen.ts
+/dist/
+
+.eslintrc.cjs
+etsc.config.cjs
