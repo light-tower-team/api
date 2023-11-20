@@ -33,12 +33,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: [
-    "@typescript-eslint",
-    "import",
-    "prettier",
-    "simple-import-sort",
-  ],
+  plugins: ["@typescript-eslint", "import", "prettier", "simple-import-sort"],
   overrides: [
     {
       files: ["*.ts"],
@@ -79,6 +74,7 @@ module.exports = {
     "no-debugger": "error",
     // typescript
     "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-unused-vars": [
       "warn",
@@ -86,12 +82,6 @@ module.exports = {
         argsIgnorePattern: "^_",
         varsIgnorePattern: "^_",
         caughtErrorsIgnorePattern: "^_",
-      },
-    ],
-    "@typescript-eslint/consistent-type-assertions": [
-      "error",
-      {
-        assertionStyle: "never",
       },
     ],
     "@typescript-eslint/naming-convention": [
@@ -112,11 +102,6 @@ module.exports = {
       {
         selector: ["function"],
         format: ["camelCase", "PascalCase"],
-      },
-      {
-        selector: "typeParameter",
-        format: ["PascalCase"],
-        prefix: ["T"],
       },
       {
         selector: "interface",

@@ -6,7 +6,7 @@
   "bracketSpacing": true,
   "quoteProps": "as-needed",
   "bracketSameLine": false,
-  "arrowParents": "always",
+  "arrowParens": "always",
   "endOfLine": "lf",
   "singleAttributePerLine": false
 }

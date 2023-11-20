@@ -15,6 +15,7 @@
   },
   "scripts": {
     "dev": "nodemon",
+    "ts_check": "tsc --noEmit",
     "build": "node scripts/build.mjs",
     "start": "node dist/main.js",
     "lint": "eslint . --fix  --report-unused-disable-directives --max-warnings 0",

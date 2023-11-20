@@ -1,31 +1,31 @@
+import { env } from "@app/env";
+import { Context, schema } from "@shared/schema";
 import { fastify } from "fastify";
 import jwt from "jsonwebtoken";
 import mercurius from "mercurius";
-
-import { env } from "@app/env";
 
 const app = fastify({
   logger: true,
   bodyLimit: 1_000_000,
 });
 
-// app.register(mercurius, {
-//   schema,
-//   graphiql: true,
-//   ide: true,
-//   path: "/graphql",
-//   context(request): Context {
-//     const authorization = request.headers["authorization"];
+app.register(mercurius, {
+  schema,
+  graphiql: true,
+  ide: true,
+  path: "/graphql",
+  context(request): Context {
+    const authorization = request.headers["authorization"];
 
-//     const token = authorization?.replace(/Bearer /, "");
+    const token = authorization?.replace(/Bearer /, "");
 
-//     const userId = token && (jwt.verify(token, "12345") as string);
+    const userId = token && (jwt.verify(token, "12345") as string);
 
-//     return {
-//       userId,
-//     };
-//   },
-// });
+    return {
+      userId,
+    };
+  },
+});
 
 app.listen({ port: env.PORT, host: env.HOST }).catch((error) => {
   app.log.error(error);
