@@ -26,24 +26,30 @@
     "test:ui": "vitest --ui",
     "test:cov": "vitest run --coverage",
     "test:debug": "vitest --inspect-brk --no-threads",
-    "test:debug:cov": "vitest --inspect-brk --no-threads --coverage"
+    "test:debug:cov": "vitest --inspect-brk --no-threads --coverage",
+    "migration:gen": "drizzle-kit generate:pg",
+    "migration:push": "drizzle-kit push:pg"
   },
   "dependencies": {
     "@pothos/core": "^3.38.0",
     "@pothos/plugin-validation": "^3.10.1",
+    "drizzle-orm": "^0.29.0",
     "fastify": "^4.24.3",
     "graphql": "^16.8.1",
     "jsonwebtoken": "^9.0.2",
     "mercurius": "^13.3.1",
     "mercurius-codegen": "^5.0.3",
+    "pg": "^8.11.3",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/eslint": "^8",
     "@types/jsonwebtoken": "^9",
     "@types/node": "^20.9.2",
+    "@types/pg": "^8.10.9",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@typescript-eslint/parser": "^6.11.0",
+    "drizzle-kit": "^0.20.4",
     "esbuild": "^0.19.6",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
