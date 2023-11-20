@@ -38,12 +38,14 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@types/eslint": "^8",
     "@types/jsonwebtoken": "^9",
     "@types/node": "^20.9.2",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@typescript-eslint/parser": "^6.11.0",
     "esbuild": "^0.19.6",
     "esbuild-node-tsc": "^2.0.5",
+    "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.0",
