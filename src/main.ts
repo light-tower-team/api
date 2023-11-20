@@ -1,22 +1,31 @@
-import { AppModule } from "@modules/app.module";
-import { INestApplication, NestApplicationOptions } from "@nestjs/common";
-import { NestFactory } from "@nestjs/core";
+import { fastify } from "fastify";
+import jwt from "jsonwebtoken";
+import mercurius from "mercurius";
 
-export async function createApp(options?: NestApplicationOptions): Promise<INestApplication> {
-  const app = await NestFactory.create(AppModule, options);
-  app.enableCors();
-  return app;
-}
+const app = fastify({
+  logger: true,
+  bodyLimit: 1_000_000,
+});
 
-async function main() {
-  const app = await createApp();
-  await app.listen(import.meta.env.PORT, import.meta.env.HOST);
-}
+// app.register(mercurius, {
+//   schema,
+//   graphiql: true,
+//   ide: true,
+//   path: "/graphql",
+//   context(request): Context {
+//     const authorization = request.headers["authorization"];
 
-export let viteNodeApp: Promise<INestApplication>;
+//     const token = authorization?.replace(/Bearer /, "");
 
-if (import.meta.env.PROD) {
-  main();
-} else {
-  viteNodeApp = createApp();
-}
+//     const userId = token && (jwt.verify(token, "12345") as string);
+
+//     return {
+//       userId,
+//     };
+//   },
+// });
+
+app.listen({ port: 8080, host: "0.0.0.0" }).catch((error) => {
+  app.log.error(error);
+  process.exit(1);
+});
