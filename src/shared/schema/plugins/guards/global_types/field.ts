@@ -8,6 +8,7 @@ declare global {
       Types extends SchemaTypes,
       ParentShape,
       Type extends TypeParam<Types>,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       Nullable extends FieldNullability<Type>,
       Args extends InputFieldMap,
     > {

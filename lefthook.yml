@@ -4,17 +4,17 @@ pre-push:
     frontend-type-check:
       tags: frontend type check
       glob: "*.{ts,tsx}"
-      run: "./node_modules/.bin/tsc --incremental --noEmit"
+      run: yarn tsc --incremental --noEmit
     frontend-eslint:
       tags: frontend style
       files: git diff --name-only --diff-filter=d origin/master...HEAD
       glob: "*.{ts,tsx}"
-      run: ./node_modules/.bin/eslint --report-unused-disable-directives --max-warnings 0 {files}
+      run: yarn eslint --report-unused-disable-directives --max-warnings 0 {files}
     frontend-prettier:
       tags: frontend style
       files: git diff --name-only --diff-filter=d origin/master...HEAD
       glob: "*.{ts,tsx}"
-      run: ./node_modules/.bin/prettier --check {files}
+      run: yarn prettier --check {files}
 
 auto-fix:
   parallel: true
@@ -23,4 +23,4 @@ auto-fix:
       tags: frontend style
       files: git diff --name-only --diff-filter=d origin/master...HEAD
       glob: "*.{ts,tsx}"
-      run: "./node_modules/.bin/eslint --fix {files} && ./node_modules/.bin/prettier --write --list-different {files}"
+      run: yarn eslint --fix {files} && yarn prettier --write --list-different {files}

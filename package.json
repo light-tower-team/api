@@ -14,6 +14,7 @@
     "url": "git+https://github.com/light-tower-team/api.git"
   },
   "scripts": {
+    "auto_fix": "yarn lefthook run auto-fix",
     "dev": "nodemon",
     "ts_check": "tsc --noEmit",
     "build": "node scripts/build.mjs",

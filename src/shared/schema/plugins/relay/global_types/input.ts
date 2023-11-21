@@ -9,6 +9,7 @@ declare global {
       before?: string | null | undefined;
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     export interface InputFieldBuilder<Types extends SchemaTypes, Kind extends "Arg" | "InputObject"> {
       connectionArgs: () => {
         [K in keyof DefaultConnectionArguments]-?: InputFieldRef<DefaultConnectionArguments[K], Kind>;
